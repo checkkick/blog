@@ -1,8 +1,9 @@
-from django.views.generic import ListView
-from django.shortcuts import get_object_or_404, render
 from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404, render
+from django.views.generic import ListView
 
 from blog.forms import EmailPostForm
+
 from .models import Post
 
 
