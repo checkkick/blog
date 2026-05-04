@@ -1,0 +1,33 @@
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+skip-string-normalization = false
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+select = [
+  "E",  # pycodestyle errors
+  "F",  # pyflakes
+  "I",  # import sorting
+  "B",  # bugbear
+  "UP", # pyupgrade
+]
+ignore = [
+  "E501" # line length handled by black
+]
+
+[tool.ruff.isort]
+known-first-party = ["your_project_name"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "your_project_name.settings"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+strict_optional = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unused_configs = true
